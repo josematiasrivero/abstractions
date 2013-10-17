@@ -12,7 +12,7 @@
       <bean class="com.modules.dust.DustConnector" />
     </constructor-arg>
   </bean>
-<!-- 
+<!--
   <bean id="templateStore" class="com.modules.dust.store.KeyValueBasedTemplateStore">
     <constructor-arg index="0" ref="keyValueStore" />
   </bean>
