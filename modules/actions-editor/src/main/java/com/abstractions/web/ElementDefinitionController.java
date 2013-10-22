@@ -63,6 +63,10 @@ public class ElementDefinitionController {
         elementDefinition.setName(form.getName());
         elementDefinition.setDisplayName(form.getDisplayName());
         elementDefinition.setIcon("Resources/" + form.getIcon());
+        if (form.getIsScript())
+            elementDefinition.setScript(form.getImplementation());
+        else
+            elementDefinition.setClassName(form.getImplementation());
         
         
         return elementDefinition;

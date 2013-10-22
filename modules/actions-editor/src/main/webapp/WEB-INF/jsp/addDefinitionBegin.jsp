@@ -25,14 +25,20 @@
                             <div class="col-lg-10">
                                 <input type="text" class="form-control" id="inputName" name="name" placeholder="">
                             </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputDisplayName" class="col-lg-2 control-label">Display Name</label>
                             <div class="col-lg-10">
                                 <input type="text" class="form-control" id="inputDisplayName" name="displayName" placeholder="">
                             </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputImplementation" class="col-lg-2 control-label">Implementation</label>
                             <div class="col-lg-10">
                                 <input type="text" class="form-control" id="inputImplementation" name="implementation" placeholder="">
                             </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputIsScript" class="col-lg-2 control-label">Script?</label>
                             <div class="col-lg-10">
                                 <div class="checkbox">
@@ -41,8 +47,11 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputIcon" class="col-lg-2 control-label">Icon</label>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" id="inputIcon" name="icon" placeholder="Upload your icon">
+                                <input type="file" class="form-control" id="inputIcon" name="icon" placeholder="Upload your icon" style="padding:0px;">
                                 <!--<input type="text" class="form-control" id="inputIcon" name="icon" placeholder="">-->
                             </div>
+                        </div>
