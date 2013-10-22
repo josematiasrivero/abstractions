@@ -33,6 +33,8 @@ public class RouterDefinitionController {
     public String add(@ModelAttribute("form") AddRouterDefinitionForm form, @PathVariable("libraryId") long libraryId) {
         RouterDefinition routerDefinition = new RouterDefinition(form.getName());
         routerDefinition = (RouterDefinition) ElementDefinitionController.createElementDefinition(form, routerDefinition);
+        routerDefinition.setRouterEvaluatorImplementation(form.getRouterEvaluatorImplementation());
+        routerDefinition.setRouterEvaluatorScript(form.getIsRouterEvaluatorScript());
         Library l = this.libraryService.get(libraryId);
         l.addDefinition(routerDefinition); 
         libraryService.update(l);

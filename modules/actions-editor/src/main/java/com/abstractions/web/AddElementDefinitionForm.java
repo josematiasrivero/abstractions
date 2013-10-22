@@ -53,4 +53,32 @@ public class AddElementDefinitionForm {
         this.icon = icon;
     }
 
+    /**
+     * @return the implementation
+     */
+    public String getImplementation() {
+        return implementation;
+    }
+
+    /**
+     * @param implementation the implementation to set
+     */
+    public void setImplementation(String implementation) {
+        this.implementation = implementation;
+    }
+
+    /**
+     * @return the isScript
+     */
+    public boolean getIsScript() {
+        return isScript;
+    }
+
+    /**
+     * @param isScript the isScript to set
+     */
+    public void setIsScript(boolean isScript) {
+        this.isScript = isScript;
+    }
+
 }

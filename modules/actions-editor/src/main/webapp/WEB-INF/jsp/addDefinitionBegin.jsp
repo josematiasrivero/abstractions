@@ -1,6 +1,6 @@
 
 <jsp:include page="/WEB-INF/jsp/header.jsp">
-    <jsp:param name="title" value="Add Flow Definition"/>
+    <jsp:param name="title" value="Add Definition"/>
 </jsp:include>
 
 <body>

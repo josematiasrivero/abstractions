@@ -4,6 +4,9 @@
   <jsp:param name="title" value="Definitions" />
 </jsp:include>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <body>
   <script type="text/javascript">
   $(document).ready(function() {
@@ -68,7 +71,7 @@
               <td>${definition.displayName}</td>
               <td><img src="/editor/${definition.icon}" alt="..."></td>
               <td>${definition.implementation}</td>
-              <td>${definition.isScript() == true ? 'Yes' : 'No'}</td>
+              <td>${definition.isScript() == true ? 'Yes' : 'No'} </td>
             </tr>
           </c:forEach>
           </tbody>
