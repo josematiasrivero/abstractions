@@ -71,4 +71,9 @@
   <bean id="fileService" class="com.service.core.FileService">
     <constructor-arg index="0" value="./files" />
   </bean>
+  
+  <bean id="elementDefinitionService" class="com.abstractions.service.ElementDefinitionService">
+    <constructor-arg index="0" ref="repository" />
+    <constructor-arg index="1" ref="libraryService" />
+  </bean>
 </beans>

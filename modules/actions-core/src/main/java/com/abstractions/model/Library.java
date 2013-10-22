@@ -20,7 +20,10 @@ public class Library {
 	private List<ElementDefinition> definitions;
 	private Map<String, ElementDefinition> definitionsByName;
 
-	protected Library() { }
+	protected Library() {
+            this.definitions = new ArrayList<ElementDefinition>();
+            this.definitionsByName = new HashMap<String, ElementDefinition>(); 
+        }
 
 	public Library(String name) {
 		this.name = name;

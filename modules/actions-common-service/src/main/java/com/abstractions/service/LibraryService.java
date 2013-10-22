@@ -44,4 +44,9 @@ public class LibraryService {
         public void remove(long id){
             this.repository.delete(Library.class, id);
         }
+        
+        @Transactional
+        public void update(Library library) {
+            this.repository.update(library);
+        }
 }

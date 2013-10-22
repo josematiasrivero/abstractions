@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="/WEB-INF/jsp/header.jsp">
-  <jsp:param name="title" value="Libraries" />
+  <jsp:param name="title" value="Definitions" />
 </jsp:include>
 
 <body>
@@ -36,7 +36,9 @@
     <div class="row">
       <div class="col-lg-12">
         <ol class="breadcrumb">
-          <li><a href="/libraries/" class='active'>Libraries</a></li>          
+          <li><a href="/libraries/">Libraries</a></li>
+          <li>${libraryName}</li>
+          <li><a href="/libraries/${libraryId}/definitions/" class='active'>Definitions</a></li>   
         </ol>   
       </div>
       <div class="col-lg-12" style="text-align: right;">       
@@ -50,18 +52,23 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Library name</th>
-              <th>Library display name</th>
+              <th>Definition name</th>
+              <th>Display name</th>
+              <th>Icon</th>
+              <th>Implementation</th>
+              <th>Script?</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-          <c:forEach var="library" items='${libraries}' varStatus="lp">
+          <c:forEach var="definition" items='${definitions}' varStatus="lp">
             <tr>
-              <td><input type="checkbox" class="selectedProperties" value="${library.id}" /></td>
-              <td>${library.name}</td>
-              <td>${library.displayName}</td>
-              <td><a href="/libraries/${library.id}/definitions/">Definitions</a></td>
+              <td><input type="checkbox" class="selectedProperties" value="${definition.id}" /></td>
+              <td>${definition.name}</td>
+              <td>${definition.displayName}</td>
+              <td><img src="/editor/${definition.icon}" alt="..."></td>
+              <td>${definition.implementation}</td>
+              <td>${definition.isScript() == true ? 'Yes' : 'No'}</td>
             </tr>
           </c:forEach>
           </tbody>
