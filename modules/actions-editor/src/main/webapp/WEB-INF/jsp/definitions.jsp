@@ -70,8 +70,9 @@
               <td>${definition.name}</td>
               <td>${definition.displayName}</td>
               <td><img src="/editor/${definition.icon}" alt="..."></td>
-              <td>${definition.implementation}</td>
+              <td><small><i>${definition.implementation}</i></small></td>
               <td>${definition.isScript() == true ? 'Yes' : 'No'} </td>
+              <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span> <small>Show</small></button></td>
             </tr>
           </c:forEach>
           </tbody>
