@@ -68,7 +68,20 @@ public class ElementDefinitionController {
         else
             elementDefinition.setClassName(form.getImplementation());
         
-        
         return elementDefinition;
+    }
+    
+    @RequestMapping(value = "/show/{definitionId}", method = RequestMethod.GET)
+    public ModelAndView show(@PathVariable("libraryId") long libraryId, @PathVariable("definitionId") long definitionId) {
+        ElementDefinition elementDefinition = this.service.get(definitionId);
+        
+        String[] classNameArray = elementDefinition.getClass().toString().split("\\.");
+        String className = classNameArray[classNameArray.length - 1];
+        ModelAndView mv = new ModelAndView("show" + className); //creates for ex: showConnectionDefinition
+         
+        String libraryName = libraryService.get(libraryId).getDisplayName();
+        mv.addObject("libraryName",libraryName);
+        mv.addObject("definition", elementDefinition);
+        return mv;
     }
 }
