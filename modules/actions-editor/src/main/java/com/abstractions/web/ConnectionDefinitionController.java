@@ -31,7 +31,7 @@ public class ConnectionDefinitionController {
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("form") AddConnectionDefinitionForm form, @PathVariable("libraryId") long libraryId) {
-         ElementDefinitionController.uploadFile(form.getIcon());
+        ElementDefinitionController.uploadFile(form.getIcon());
         ConnectionDefinition connectionDefinition = new ConnectionDefinition(form.getName());
         connectionDefinition = (ConnectionDefinition) ElementDefinitionController.createElementDefinition(form, connectionDefinition);
         connectionDefinition.setColor(form.getColor());
