@@ -31,6 +31,7 @@ public class ProcessorDefinitionController {
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("form") AddProcessorDefinitionForm form, @PathVariable("libraryId") long libraryId) {
+        ElementDefinitionController.uploadFile(form.getIcon());
         ProcessorDefinition processorDefinition = new ProcessorDefinition(form.getName());
         processorDefinition = (ProcessorDefinition) ElementDefinitionController.createElementDefinition(form, processorDefinition);
         Library l = this.libraryService.get(libraryId);

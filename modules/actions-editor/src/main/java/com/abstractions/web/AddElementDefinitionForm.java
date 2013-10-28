@@ -1,5 +1,7 @@
 package com.abstractions.web;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 /**
  *
  * @author Guido J. Celada
@@ -7,7 +9,7 @@ package com.abstractions.web;
 public class AddElementDefinitionForm {
         private String name;
 	private String displayName;
-	private String icon;
+	private CommonsMultipartFile icon;
 	private String implementation;
 	private boolean isScript;
 
@@ -42,14 +44,14 @@ public class AddElementDefinitionForm {
     /**
      * @return the icon
      */
-    public String getIcon() {
+    public CommonsMultipartFile getIcon() {
         return icon;
     }
 
     /**
      * @param icon the icon to set
      */
-    public void setIcon(String icon) {
+    public void setIcon(CommonsMultipartFile icon) {
         this.icon = icon;
     }
 

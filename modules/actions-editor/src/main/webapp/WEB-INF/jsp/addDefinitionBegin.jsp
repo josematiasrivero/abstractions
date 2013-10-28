@@ -19,7 +19,7 @@
 
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="form-horizontal" role="form" name="form" action="add" method="POST">
+                    <form class="form-horizontal" role="form" name="form" action="add" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="inputName" class="col-lg-2 control-label">Name</label>
                             <div class="col-lg-10">
@@ -44,14 +44,17 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="isScript" id='inputIsScript' > Is script?
+                                         <input type="hidden" value="on" name="_isScript">
                                     </label>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="inputIcon" class="col-lg-2 control-label">Icon</label>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" id="inputIcon" name="icon" placeholder="Upload your icon" style="padding:0px;">
-                                <!--<input type="text" class="form-control" id="inputIcon" name="icon" placeholder="">-->
+                                <input type="file" class="form-control" id="inputIcon" name="icon" style="padding:0px;">
                             </div>
                         </div>
+  
+
