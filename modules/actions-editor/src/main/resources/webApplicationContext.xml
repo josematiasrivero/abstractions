@@ -76,4 +76,10 @@
     <constructor-arg index="0" ref="repository" />
     <constructor-arg index="1" ref="libraryService" />
   </bean>
+   
+ <bean id="multipartResolver"  
+  class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> 
+    
+ <bean class="org.spring.log.LoggingHandlerExceptionResolver"/>
+
 </beans>
