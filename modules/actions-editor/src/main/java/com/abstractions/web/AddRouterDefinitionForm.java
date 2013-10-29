@@ -25,7 +25,7 @@ public class AddRouterDefinitionForm extends AddElementDefinitionForm {
     /**
      * @return the isRouterEvaluatorScript
      */
-    public boolean getIsRouterEvaluatorScript() {
+    public boolean isIsRouterEvaluatorScript() {
         return isRouterEvaluatorScript;
     }
 
