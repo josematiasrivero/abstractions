@@ -92,4 +92,18 @@ public class GenericRepository {
         public void update(Object o) {
             this.sessionFactory.getCurrentSession().update(o);
         }
+        
+        /**
+         * The table of the class needs to have a "delete" column
+         * 
+         * @param className the name of the table of the class of the object to be logical deleted
+         * @param id the id of the object to be logical deleted
+         */
+        public void logicalDelete(String className, long id) {
+            this.sessionFactory.getCurrentSession()
+			.createSQLQuery("UPDATE "+className+" SET deleted = 1 WHERE library_id = ?")
+                        .setLong(0, id)
+			.executeUpdate();
+        }
+        
 }

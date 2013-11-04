@@ -173,6 +173,7 @@ CREATE TABLE library (
   `library_id` bigint(20) NOT NULL AUTO_INCREMENT,
   name varchar(200) NOT NULL,
   display_name varchar(200) NOT NULL,
+  `deleted` bit(1) NOT NULL DEFAULT b'0',
   primary key (library_id)
 );
 

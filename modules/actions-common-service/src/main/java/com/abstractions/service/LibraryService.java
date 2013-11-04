@@ -42,7 +42,7 @@ public class LibraryService {
        
         @Transactional
         public void remove(long id){
-            this.repository.delete(Library.class, id);
+            this.repository.logicalDelete("library", id);
         }
         
         @Transactional
