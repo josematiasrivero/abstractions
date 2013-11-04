@@ -19,16 +19,16 @@
   })
   </script>
   <script type="text/javascript">
-//      function filterDeleted() {
-//          var environment = document.getElementById("select-deleted");
-//          $('#properties-table td:nth-child(4)').each (function() {
-//            
-//           if ((this).innerHTML == environment.value || environment.value == 'DISPLAY ALL')
-//               ($(this).closest('tr')).css('display','table-row');
-//            else
-//                ($(this).closest('tr')).css('display','none');
-//          });
-//      }
+      function filterEnvironment() {
+          var environment = document.getElementById("select-environment");
+          $('#properties-table td:nth-child(4)').each (function() {
+            
+           if ((this).innerHTML == environment.value || environment.value == 'DISPLAY ALL')
+               ($(this).closest('tr')).css('display','table-row');
+            else
+                ($(this).closest('tr')).css('display','none');
+          });
+      }
   </script>
   <jsp:include page="/WEB-INF/jsp/navbar.jsp" />
 
@@ -44,15 +44,6 @@
       </div>
     </div>
 
-<!--   <div class="col-lg-12" >
-          <label>Show libraries:</label>
-            <select class="form-control" onchange="filterDeleted();" id="select-deleted">
-              <option>DISPLAY ALL</option>
-              <option>DELETED</option>
-              <option selected="selected">DEFAULT</option>
-            </select>
-   </div> -->
-      
     <div class="row">
       <div class="col-lg-12">
         <table class="table table-striped" id="properties-table">

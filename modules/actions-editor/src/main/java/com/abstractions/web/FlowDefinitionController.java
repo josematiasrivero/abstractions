@@ -6,7 +6,6 @@ import com.abstractions.service.ElementDefinitionService;
 import com.abstractions.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +31,12 @@ public class FlowDefinitionController {
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("form") AddFlowDefinitionForm form, @PathVariable("libraryId") long libraryId) {
-        ElementDefinitionController.uploadFile(form.getIcon());
         FlowDefinition flowDefinition = new FlowDefinition(form.getName());
         flowDefinition = (FlowDefinition) ElementDefinitionController.createElementDefinition(form, flowDefinition);
+        //flowDefinition.setStartingDefinition(form.getStartingDefinition());
         Library l = this.libraryService.get(libraryId);
         l.addDefinition(flowDefinition); 
         libraryService.update(l);
-        
         return "redirect:/libraries/{libraryId}/definitions/";
     }
 }

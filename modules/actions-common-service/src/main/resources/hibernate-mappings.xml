@@ -172,7 +172,6 @@
       <key column="library_id" />
       <one-to-many class="com.abstractions.model.ElementDefinition" />
     </bag>
-    
   </class>
 
   <class name="com.abstractions.model.ElementDefinition" table="element_definition">
